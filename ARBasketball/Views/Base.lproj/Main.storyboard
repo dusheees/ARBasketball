@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TCN-ip-FSs">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--AR Basketball-->
+        <scene sceneID="9Xa-WS-eFe">
+            <objects>
+                <viewController id="ac0-wC-0RW" customClass="WelcomeViewController" customModule="ARBasketball" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LIO-Sc-jBg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome basketball" translatesAutoresizingMaskIntoConstraints="NO" id="81P-mA-hu8">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qnr-Mo-e67">
+                                <rect key="frame" x="87" y="421" width="240" height="54"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="m1A-kf-Ky2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Start the game">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="0ic-RR-3I4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0LZ-JQ-RKa"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0LZ-JQ-RKa" firstAttribute="trailing" secondItem="81P-mA-hu8" secondAttribute="trailing" id="Dcw-IF-ftK"/>
+                            <constraint firstItem="81P-mA-hu8" firstAttribute="top" secondItem="LIO-Sc-jBg" secondAttribute="top" id="H2T-sk-yHq"/>
+                            <constraint firstItem="81P-mA-hu8" firstAttribute="leading" secondItem="0LZ-JQ-RKa" secondAttribute="leading" id="I2y-q0-erD"/>
+                            <constraint firstAttribute="bottom" secondItem="81P-mA-hu8" secondAttribute="bottom" id="Nph-la-Xj2"/>
+                            <constraint firstItem="Qnr-Mo-e67" firstAttribute="centerX" secondItem="LIO-Sc-jBg" secondAttribute="centerX" id="dNL-8X-18S"/>
+                            <constraint firstItem="Qnr-Mo-e67" firstAttribute="centerY" secondItem="LIO-Sc-jBg" secondAttribute="centerY" id="pKR-Vb-67e"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="AR Basketball" id="YqI-Br-Uag"/>
+                    <connections>
+                        <outlet property="startButton" destination="Qnr-Mo-e67" id="cyW-v2-1Jq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YIm-jO-ukq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="236.23188405797103" y="47.544642857142854"/>
+        </scene>
+        <!--Game View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="ARBasketball" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U0K-SW-4ec">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="t5A-Ng-hoW" appends="YES" id="LZ7-06-bYu"/>
+                                </connections>
+                            </arscnView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2t-tR-Ye5">
+                                <rect key="frame" x="20" y="108" width="107" height="36"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find the vertical plane" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMw-Hx-yDx">
+                                <rect key="frame" x="43.5" y="427" width="327.5" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="0pa-E2-WfT"/>
+                            <constraint firstItem="A2t-tR-Ye5" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" constant="20" id="44J-N2-vJU"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="61a-5K-CGH"/>
+                            <constraint firstItem="JMw-Hx-yDx" firstAttribute="centerX" secondItem="U0K-SW-4ec" secondAttribute="centerX" id="HJD-RS-rY9"/>
+                            <constraint firstItem="JMw-Hx-yDx" firstAttribute="centerY" secondItem="U0K-SW-4ec" secondAttribute="centerY" id="MFT-RE-eax"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="A2t-tR-Ye5" secondAttribute="trailing" id="ash-Xw-5V3"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="top" secondItem="U0K-SW-4ec" secondAttribute="top" id="coJ-u5-XPr"/>
+                            <constraint firstItem="A2t-tR-Ye5" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" constant="20" id="dk8-WX-kKA"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="kzN-Ha-EOo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="K8r-xs-KdP">
+                        <barButtonItem key="leftBarButtonItem" title="AR Basketball" id="y89-Rp-gHP">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Results" style="done" id="6gs-gf-V4k">
+                            <connections>
+                                <segue destination="tR6-Sn-6lt" kind="show" identifier="ResultViewController" id="eL7-8o-dVa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="messageLabel" destination="JMw-Hx-yDx" id="sZI-Zp-Sal"/>
+                        <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
+                        <outlet property="scoreLabel" destination="A2t-tR-Ye5" id="kGK-vk-dgq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="t5A-Ng-hoW">
+                    <connections>
+                        <action selector="userTapped:" destination="BV1-FR-VrT" id="qZw-Ek-7b2"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1023.1884057971015" y="47.544642857142854"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="O1d-bR-e9o">
+            <objects>
+                <viewController id="tR6-Sn-6lt" customClass="ResultViewController" customModule="ARBasketball" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="E3W-eo-clK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcome basketball" translatesAutoresizingMaskIntoConstraints="NO" id="ooE-cM-xf2">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHc-C0-CDP">
+                                <rect key="frame" x="132" y="427" width="150" height="42"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="FYc-K9-cEk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fdx-g0-57N"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ooE-cM-xf2" firstAttribute="top" secondItem="E3W-eo-clK" secondAttribute="top" id="21O-bb-BaT"/>
+                            <constraint firstItem="ooE-cM-xf2" firstAttribute="leading" secondItem="fdx-g0-57N" secondAttribute="leading" id="3CE-Qy-zhA"/>
+                            <constraint firstItem="fdx-g0-57N" firstAttribute="trailing" secondItem="ooE-cM-xf2" secondAttribute="trailing" id="5TB-zK-wkv"/>
+                            <constraint firstAttribute="bottom" secondItem="ooE-cM-xf2" secondAttribute="bottom" id="Sbn-yF-lfM"/>
+                            <constraint firstItem="FHc-C0-CDP" firstAttribute="centerX" secondItem="E3W-eo-clK" secondAttribute="centerX" id="j6f-EL-Kfc"/>
+                            <constraint firstItem="FHc-C0-CDP" firstAttribute="centerY" secondItem="E3W-eo-clK" secondAttribute="centerY" id="rSP-gm-6uv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="zxQ-nN-A6j">
+                        <barButtonItem key="rightBarButtonItem" title="Exit" style="done" id="NDa-xB-Obb">
+                            <connections>
+                                <segue destination="LGz-Wp-z5v" kind="unwind" unwindAction="unwind:" id="f7c-AP-rF2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="scoreLabel" destination="FHc-C0-CDP" id="96g-ye-zyH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hhp-00-iRI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="LGz-Wp-z5v" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1825" y="48"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aTT-IT-qqy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TCN-ip-FSs" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rnk-oH-Aij">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ac0-wC-0RW" kind="relationship" relationship="rootViewController" id="JJp-GY-mEP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g68-Oy-6lI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-673.91304347826087" y="47.544642857142854"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="welcome basketball" width="616" height="616"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
